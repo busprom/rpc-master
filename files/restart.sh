@@ -4,4 +4,5 @@ if [ $# -eq 0 ]
     python3 /mnt/snapcheck.py
 fi
 sudo systemctl stop sol.service
+chmod +x /home/sol/validator.sh
 sudo systemctl start sol.service

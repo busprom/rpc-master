@@ -1,6 +1,5 @@
 #!/bin/bash
-export SOLANA_METRICS_CONFIG="host=https://metrics.solana.com:8086,db=mainnet-beta,u=mainnet-beta_write,p=password"
-exec /mnt/solana/target/release/solana-validator \
+exec solana-validator \
 --identity /home/sol/validator-keypair.json \
 --ledger /mnt/ledger \
 --accounts /mnt/data/accounts \
