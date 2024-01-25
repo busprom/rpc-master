@@ -10,6 +10,9 @@
   include_tasks: disks.yaml
   when: setup_disks|default(false)|bool == true
 
+- name: logrotate
+  include_tasks: rotate.yaml
+
 - name: solana keygen
   include_tasks: keygen.yaml
 
