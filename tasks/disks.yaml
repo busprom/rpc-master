@@ -1,0 +1,35 @@
+- name: umount ledger disks
+  become: true
+  become_user: root
+  shell: umount /dev/{{ ledger_disk }}
+  ignore_errors: True
+
+- name: umount ledger disks
+  become: true
+  become_user: root
+  shell: umount /dev/{{ data_disk }}
+  ignore_errors: True  
+
+
+- name: format ledger disks with ext4
+  become: true
+  become_user: root
+  shell: mkfs.ext4 /dev/{{ ledger_disk }}
+
+
+- name: mount disks for ledger
+  become: true
+  become_user: root
+  shell: mount /dev/{{ ledger_disk }} /mnt/ledger
+
+
+- name: format data disks with ext4
+  become: true
+  become_user: root
+  shell: mkfs.ext4 /dev/{{ data_disk }}
+
+
+- name: mount disks for ledger
+  become: true
+  become_user: root
+  shell: mount /dev/{{ data_disk }} /mnt/data

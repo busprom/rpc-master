@@ -1,0 +1,16 @@
+- name: install pip3
+  apt: name=python3-pip state=present 
+
+- name: install snapshot requirements
+  become: true
+  become_user: root
+  ansible.builtin.pip:
+    name:
+      - tqdm
+      - requests
+    executable: pip3
+
+- name: download latest snapshot
+  become: true
+  become_user: root
+  shell: python3 /mnt/snapshot-finder.py --snapshot_path /mnt/data --version 1.17 --max_latency 150

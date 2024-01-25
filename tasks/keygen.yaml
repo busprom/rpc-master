@@ -1,0 +1,6 @@
+- name: create identity key
+  become: true
+  become_user: root
+  shell: solana-keygen new --no-bip39-passphrase -o /home/sol/validator-keypair.json
+  args:
+    creates: /home/sol/validator-keypair.json

@@ -1,0 +1,66 @@
+- name: sol validator setup
+  become: true
+  become_user: root
+  copy:
+    src: validator.sh
+    dest: /home/sol/validator.sh
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: setup sol.service
+  become: true
+  become_user: root
+  copy:
+    src: sol.service
+    dest: /etc/systemd/system/sol.service
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: copy restart.sh
+  become: true
+  become_user: root
+  copy:
+    src: restart.sh
+    dest: /home/sol/restart.sh
+    owner: root
+    group: root
+    mode: "0755"
+    
+- name: copy download_start.sh
+  become: true
+  become_user: root
+  copy:
+    src: download_start.sh
+    dest: /home/sol/download_start.sh
+    owner: root
+    group: root
+    mode: "0755"
+
+- name: copy snapcheck.py
+  become: true
+  become_user: root
+  copy:
+    src: snapcheck.py
+    dest: /mnt/snapcheck.py
+    owner: root
+    group: root
+
+- name: copy snapshot-finder.py
+  become: true
+  become_user: root
+  copy:
+    src: snapshot-finder.py
+    dest: /mnt/snapshot-finder.py
+    owner: root
+    group: root
+
+- name: copy montip.py
+  become: true
+  become_user: root
+  copy:
+    src: montip.py
+    dest: /mnt/montip.py
+    owner: root
+    group: root
