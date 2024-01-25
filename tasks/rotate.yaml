@@ -16,7 +16,7 @@
   blockinfile:
     path: /etc/logrotate.d/sol
     block: |
-      /mnt/logs/solana-validator.log {
+      /home/sol/solana-rpc.log {
         rotate 7
         daily
         missingok
