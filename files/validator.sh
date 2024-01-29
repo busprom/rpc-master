@@ -11,7 +11,7 @@ exec solana-validator \
 --entrypoint entrypoint4.mainnet-beta.solana.com:8001 \
 --entrypoint entrypoint5.mainnet-beta.solana.com:8001 \
 --rpc-port 8899 \
---dynamic-port-range 8002-8099 \
+--dynamic-port-range 8002-8020 \
 --no-port-check \
 --halt-on-trusted-validators-accounts-hash-mismatch \
 --gossip-port 8001 \
@@ -23,13 +23,9 @@ exec solana-validator \
 --enable-rpc-transaction-history \
 --wal-recovery-mode skip_any_corrupted_record \
 --expected-genesis-hash 5eykt4UsFv8P8NJdTREpY1vzqKqZKvdpKuc147dw2N9d \
---rpc-send-default-max-retries 3 \
---rpc-send-service-max-retries 3 \
---rpc-send-retry-ms 2000 \
 --full-rpc-api \
 --accounts-index-memory-limit-mb 350 \
 --account-index-exclude-key kinXdEcpDQeHPEuQnqmUgtYykqKGVFq6CeVX5iAHJq6 \
---tpu-use-quic \
 --known-validator PUmpKiNnSVAZ3w4KaFX6jKSjXUNHFShGkXbERo54xjb \
 --known-validator Ninja1spj6n9t5hVYgF3PdnYz2PLnkt7rvaw3firmjs \
 --known-validator ChorusmmK7i1AxXeiTtQgQZhQNiXYU84ULeaYF1EH15n \
@@ -42,4 +38,5 @@ exec solana-validator \
 --known-validator Certusm1sa411sMpV9FPqU5dXAYhmmhygvxJ23S6hJ24 \
 --known-validator 9bkyxgYxRrysC1ijd6iByp9idn112CnYTw243fdH2Uvr \
 --known-validator 12ashmTiFStQ8RGUpi1BTCinJakVyDKWjRL6SWhnbxbT \
---known-validator FdaysQ2BZWUGBy8nqFgiudnrhzJp4xChQ8B4zJdc2JZB
+--known-validator FdaysQ2BZWUGBy8nqFgiudnrhzJp4xChQ8B4zJdc2JZB \
+--limit-ledger-size 50000000 \
